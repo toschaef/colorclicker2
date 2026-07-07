@@ -179,24 +179,16 @@ function throttle(callback) {
 
 const switchCheckbox = document.getElementById("switchCheckbox");
 
-//listen for left and right key press
+//listen for arrow left/right and space
 document.body.addEventListener('keydown', function (event) {    
     switch (event.key) {
         case "ArrowLeft":
             throttle(prevInList);
             break;
         case "ArrowRight":
-            throttle(nextInList);
-            break;
         case " ":
             event.preventDefault();
-            switchCheckbox.checked = !switchCheckbox.checked;
-            if (switchCheckbox.checked) {
-                clearInterval(intervalID);
-                intervalID = setInterval(nextInList, intervalSet);
-            } else {
-                clearInterval(intervalID);
-            }
+            throttle(nextInList);
             break;
     }
 });

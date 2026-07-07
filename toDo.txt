@@ -1,6 +1,5 @@
 longterm
 
-space bar to stop auto switch
 put hex code under colorname
 create as a mobile app
 
